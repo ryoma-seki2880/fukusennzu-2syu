@@ -65,10 +65,151 @@ select,button,option{font:inherit;color:#1a1a1a;background-color:#fff;-webkit-te
 #modal .row .danger{background:var(--ng);color:#fff;-webkit-text-fill-color:#fff;border-color:var(--ng)}
 .toast{position:fixed;left:50%;top:56px;transform:translateX(-50%);background:rgba(20,20,20,.86);color:#fff;padding:7px 14px;border-radius:20px;font-size:13px;z-index:40;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.show{opacity:1}
+
+/* タイトル画面 */
+#title{position:fixed;inset:0;z-index:50;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;-webkit-user-select:text;user-select:text;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#title.hide{display:none}
+.tw{max-width:960px;margin:0 auto;padding:18px 16px 40px}
+.hero{background:linear-gradient(135deg,#1f3f7a,#1f5fbf);color:#fff;border-radius:18px;padding:22px 20px 18px;position:relative;overflow:hidden}
+.hero .kick{font-size:13px;font-weight:700;opacity:.85;letter-spacing:.06em}
+.hero h2{font-size:26px;line-height:1.3;margin:6px 0 8px;font-weight:800}
+.hero p{margin:0;font-size:14px;line-height:1.7;opacity:.95}
+.hero svg{position:absolute;right:-10px;bottom:-14px;opacity:.16}
+.prog{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:13px;font-weight:700}
+.prog .bar{flex:1;height:8px;background:rgba(255,255,255,.25);border-radius:6px;overflow:hidden}
+.prog .bar i{display:block;height:100%;background:#7ee08f;border-radius:6px}
+.sec{margin-top:22px}
+.sec>h3{font-size:17px;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.sec>h3 .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:var(--acc);color:#fff;font-size:13px;align-items:center;justify-content:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 12px 10px;text-align:left;display:flex;flex-direction:column;gap:6px;min-height:104px;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.04);-webkit-text-fill-color:currentColor}
+.card:active{transform:scale(.98)}
+.card .no{font-size:22px;font-weight:800;color:var(--acc);line-height:1}
+.card .tt{font-size:13.5px;font-weight:700;line-height:1.45;color:var(--ink);flex:1}
+.badge{align-self:flex-start;font-size:11.5px;font-weight:800;border-radius:20px;padding:2px 9px;border:1px solid}
+.badge.b0{color:#6b7280;border-color:#d1d5db;background:#f9fafb}
+.badge.b1{color:#9a5b00;border-color:#f3c77a;background:#fff7e8}
+.badge.b2{color:#17703a;border-color:#9bd5ad;background:#ecf8f0}
+details.box{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+details.box summary{list-style:none;cursor:pointer;padding:13px 14px;font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px}
+details.box summary::-webkit-details-marker{display:none}
+details.box summary::after{content:"＋";margin-left:auto;color:var(--sub);font-weight:700}
+details.box[open] summary::after{content:"－"}
+details.box .in{padding:0 16px 14px;font-size:14px;line-height:1.75}
+details.box ol,details.box ul{margin:4px 0 0;padding-left:20px}
+details.box li{margin:3px 0}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin-top:6px}
+.kv b{white-space:nowrap}
+.chip{display:inline-flex;align-items:center;gap:5px;font-weight:700}
+.chip i{display:inline-block;width:14px;height:14px;border-radius:50%;border:2px solid #333}
+.okng{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+@media (max-width:560px){.okng{grid-template-columns:1fr}.hero h2{font-size:22px}}
+.okng>div{border-radius:10px;padding:10px 12px;font-size:13.5px}
+.okng .ok{background:#ecf8f0;border:1px solid #bfe5cb}
+.okng .ng{background:#fdeeee;border:1px solid #f2c4c4}
+.okng h4{margin:0 0 4px;font-size:13.5px}
+.foot{font-size:12px;color:var(--sub);margin-top:18px;line-height:1.7}
+.hbtn.menu{font-weight:800}
+
+#mini{position:absolute;right:8px;top:8px;width:min(30%,300px);background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 3px 12px rgba(0,0,0,.12);z-index:5;overflow:hidden;transition:width .18s}
+#mini.big{width:min(86%,760px);left:50%!important;right:auto!important;top:8px!important;bottom:auto!important;transform:translateX(-50%)}
+#mini .mh{white-space:nowrap;display:flex;align-items:center;gap:6px;padding:4px 8px;font-size:12px;font-weight:800;background:#f4f6fa;border-bottom:1px solid var(--line)}
+#mini .mh span{flex:1}
+#mini .mh button{border:1px solid var(--line);background:#fff;border-radius:6px;font-size:11px;padding:2px 7px;font-weight:700}
+#mini svg{display:block;width:100%;height:auto;touch-action:manipulation}
+#mini.fold svg,#mini.fold .mn{display:none}
+#mini.fold{width:auto}
+@media (orientation:portrait){#mini{width:min(78%,340px)}}
+#mini .mn{font-size:10px;color:var(--sub);padding:3px 30px 5px;line-height:1.4;text-align:center}
+
+#mini .grip{position:absolute;width:26px;height:26px;z-index:2;touch-action:none;cursor:nwse-resize;display:flex;align-items:center;justify-content:center}
+#mini .grip svg{width:16px;height:16px;pointer-events:none}
+#mini .grip::before{content:"";position:absolute;inset:3px;border-radius:6px;background:#eef2f8;border:1px solid #cfd6e2}
+#mini.fold .grip{display:none}
+#mini.resizing{transition:none;box-shadow:0 0 0 2px var(--acc),0 3px 12px rgba(0,0,0,.18)}
 </style>
 </head>
 <body>
+<div id="title">
+<div class="tw">
+  <div class="hero">
+    <div class="kick">第二種電気工事士 技能試験</div>
+    <h2>複線図 練習アプリ<br>令和8年度 公表候補問題 13問</h2>
+    <p>単線図の器具とジョイントボックスが置かれた画面に、指で電線を描いて複線図を完成させます。描き終わったら「判定」で結線と色をチェックできます。</p>
+    <div class="prog"><span id="progTxt">正解済み 0 / 13</span><span class="bar"><i id="progBar" style="width:0%"></i></span></div>
+    <svg width="170" height="120" viewBox="0 0 170 120" fill="none" stroke="#fff" stroke-width="6"><circle cx="40" cy="60" r="30" stroke-dasharray="10 8"/><circle cx="130" cy="60" r="30" stroke-dasharray="10 8"/><path d="M0 50H40M70 60H100M40 60V120M130 0V60"/></svg>
+  </div>
+
+  <div class="sec">
+    <h3><span class="n">1</span>問題を選ぶ</h3>
+    <div class="grid" id="cards"></div>
+  </div>
+
+  <div class="sec">
+    <h3><span class="n">2</span>使い方とルール</h3>
+
+    <details class="box" open><summary>✍️ 操作方法</summary><div class="in">
+      <ol>
+        <li><b>問題を選ぶ</b>と、電源・器具・ジョイントボックス（点線）が置かれた画面になります。右上の「条件」でその問題の内容を確認できます。</li>
+        <li>下（スマホを横向きにすると右）の<b>色ボタン</b>で電線の色（黒・白・赤・緑）を選びます。</li>
+        <li><b>1本指でなぞる</b>と線が引けます。端子（○）の近くで指を離すと、端子に吸い付きます。</li>
+        <li><b>ジョイントボックスの中</b>で指を離すと接続点ができます。同じ接続点に別の線をつなぐと、その線どうしが「接続」されたことになります（●が接続点）。</li>
+        <li>画面の隅の<b>単線図</b>で、どのボックスからどの器具へケーブルが行くか確認できます（角のつまみをドラッグで大きさ調整、タップで拡大、「隠す」でたたむ）。</li>
+        <li><b>2本指</b>で拡大・移動ができます。「全体」で元の表示に戻ります。</li>
+        <li>間違えたら <b>消しゴム</b>（消したい線をタップ／なぞる）、<b>戻す</b>（1手前に戻る）、<b>全消去</b> が使えます。</li>
+        <li>描き終わったら <b>判定</b>。分からないときは <b>正解</b> で正解例を重ねて表示できます（もう一度押すと消えます）。</li>
+      </ol>
+      <p style="margin:8px 0 0">描いた線は問題ごとにこの端末に自動で保存されます。続きはいつでも再開できます。</p>
+    </div></details>
+
+    <details class="box"><summary>✅ 判定の基準</summary><div class="in">
+      <p style="margin:0">「判定」では、次の2点をチェックします。</p>
+      <div class="okng">
+        <div class="ok"><h4>① 結線（つながり方）</h4>すべての端子が正しい相手とつながっているか。<br>・つながっていない端子（未接続）<br>・つないではいけない線どうしの接続（誤接続）<br>・電源の黒と白がつながる（短絡）<br>を見つけて表示します。</div>
+        <div class="ok"><h4>② 電線の色</h4>・電源の<b>接地側</b>につながる線 → <b>白</b><br>・電源の<b>非接地側</b>につながる線 → <b>黒</b><br>・接地線 → <b>緑</b><br>・三相（No.4）：R相 赤、S相 白、T相 黒</div>
+      </div>
+      <p style="margin:10px 0 4px"><b>正解として扱うもの</b>（電気的に同じになる結線）</p>
+      <ul>
+        <li>器具の2つの端子のどちらに白・黒をつないでもよい（判定上）</li>
+        <li>3路スイッチの 1 と 3 の入れ替え、4路スイッチの端子の入れ替え</li>
+        <li>リモコンリレーの各端子の上下の入れ替え</li>
+        <li>返り線・渡り線の色（ケーブルの残りの色になるため自由）</li>
+      </ul>
+      <p style="margin:10px 0 4px"><b>判定しないもの</b></p>
+      <ul>
+        <li>リングスリーブ・差込形コネクタの種類や刻印</li>
+        <li>電線の長さ、使うケーブルの種類と本数</li>
+        <li>線の引き方（曲がり方や通る位置）</li>
+      </ul>
+    </div></details>
+
+    <details class="box"><summary>🎨 電線の色のルール（本番）</summary><div class="in">
+      <div class="kv">
+        <b>2心ケーブル</b><span><span class="chip"><i style="background:#1a1a1a"></i>黒</span>・<span class="chip"><i style="background:#fff;border-color:#888"></i>白</span></span>
+        <b>3心ケーブル</b><span><span class="chip"><i style="background:#1a1a1a"></i>黒</span>・<span class="chip"><i style="background:#fff;border-color:#888"></i>白</span>・<span class="chip"><i style="background:#d62828"></i>赤</span></span>
+        <b>接地線</b><span><span class="chip"><i style="background:#1b8a3a"></i>緑</span>（E1.6）</span>
+      </div>
+      <ul style="margin-top:8px">
+        <li><b>黒</b>：電源の非接地側（スイッチ・コンセントへの電源）</li>
+        <li><b>白</b>：電源の接地側（器具の接地側の端子へ）</li>
+        <li><b>赤</b>：返り線・渡り線など（ケーブルの残りの色）</li>
+      </ul>
+      <p style="margin:8px 0 0">「正解」の正解例も、2心＝黒白・3心＝黒白赤のケーブルの心線色に合わせて色を付けています。同じケーブルの線は並んで表示されます。</p>
+    </div></details>
+
+    <details class="box"><summary>ℹ️ この練習について</summary><div class="in">
+      <ul>
+        <li>器具の配置は、公表された候補問題の単線図をもとに再現した練習用です。</li>
+        <li>本番では、電線の色・接続方法・寸法などは試験当日の<b>施工条件</b>で指定されます。必ず問題用紙の施工条件に従ってください。</li>
+        <li>保存はこの端末のブラウザ内だけです。別の端末やブラウザには引き継がれません。</li>
+      </ul>
+    </div></details>
+  </div>
+  <div class="foot">令和8年度 第二種電気工事士 技能試験（上期・下期共通の候補問題 No.1〜No.13）</div>
+</div>
+</div>
 <header>
+  <button class="hbtn menu" id="bMenu" aria-label="問題一覧へ戻る">☰ 一覧</button>
   <h1>複線図練習 <span style="color:var(--sub);font-weight:600">R8 第二種</span></h1>
   <select id="sel" aria-label="候補問題"></select>
   <span class="sp"></span>
@@ -86,6 +227,7 @@ select,button,option{font:inherit;color:#1a1a1a;background-color:#fff;-webkit-te
       <g id="gLive"></g>
     </svg>
     <div id="hint">1本指で描く・2本指で拡大/移動</div>
+    <div id="mini"><div class="mh"><span>単線図</span><button id="mBig">拡大</button><button id="mFold">隠す</button></div><svg id="miniSvg" viewBox="0 0 1280 720"></svg><div class="mn">線1本＝ケーブル1本（2C＝2心・3C＝3心）</div><div class="grip" id="mGrip" aria-label="大きさを変える"><svg viewBox="0 0 16 16" style="position:relative"><path d="M15 5L5 15M15 10L10 15" stroke="#4b5563" stroke-width="2" stroke-linecap="round"/></svg></div></div>
     <div id="rot">📱 横向きにすると大きく描けます</div>
   </div>
   <div id="tools">
@@ -391,7 +533,7 @@ function modelSegs(p){
   // 渡り線は同じ位置でボックスへ出る同じ回路の線と同色
   segs.forEach(sg=>{if(sg.c)return;const anc=segs.find(o=>o.cab&&o.net===sg.net&&o.loc===sg.jmp&&o.c);sg.c=anc?anc.c:netColor(p.nets[sg.net]);});
   routeAll(segs,B,{loc,boxes:p.boxes});
-  return{segs,joints};
+  return{segs,joints,loc};
 }
 // 直交経路：同じケーブルの線は1本の経路に沿って並走させ、端子とボックス内の接続点でだけ分かれる
 function routeAll(segs,B,ctx){
@@ -547,6 +689,61 @@ function routeAll(segs,B,ctx){
       const np=merge(pre.concat(r).concat(post));const old=g.pts;g.pts=np;const vn=viol(g);g.pts=old;if(vn<viol(g))g.pts=np;reg(g.pts,o);}}
 }
 
+// 単線図（ケーブルの通り道）：ボックスと器具を1本の線で結び、心線数を表示
+function miniSVG(p){if(p._mini)return p._mini;const B=build(p);const {segs,loc}=modelSegs(p);
+  const LB={};for(const id in B.terms){const t=B.terms[id];const L=loc(id);let bb=B.compById[t.comp].bb;if(B.compById[t.comp].c.t==="RL"){const S=48;bb=[t.x-S*0.6,bb[1],t.x+S*0.6,bb[3]];}
+    const r=LB[L]=LB[L]||[1e9,1e9,-1e9,-1e9];r[0]=Math.min(r[0],bb[0]);r[1]=Math.min(r[1],bb[1]);r[2]=Math.max(r[2],bb[2]);r[3]=Math.max(r[3],bb[3]);}
+  const side=sd=>{if(sd.box){const b=p.boxes.find(x=>x.id===sd.box);return{box:1,x:b.x,y:b.y};}const r=LB[sd.loc];return{box:0,r,key:sd.loc,x:(r[0]+r[2])/2,y:(r[1]+r[3])/2};};
+  const tside={};for(const id in B.terms){const t=B.terms[id];const c=B.compById[t.comp];const L=c.c.t==="RL"?t.comp:loc(id);const bb=c.bb;const sd=Math.abs(t.y-bb[1])<3?"t":Math.abs(t.y-bb[3])<3?"b":Math.abs(t.x-bb[0])<3?"l":Math.abs(t.x-bb[2])<3?"r":"?";tside[L]=tside[L]===undefined?sd:(tside[L]===sd?sd:"?");}
+  const edge=(S,to)=>{if(S.box)return[S.x,S.y];const r=S.r;const ts=tside[S.key];if(ts==="t")return[S.x,r[1]-6];if(ts==="b"&&to[1]>S.y-40)return[S.x,r[3]+6];const dx=to[0]-S.x,dy=to[1]-S.y;if(Math.abs(dy)>=Math.abs(dx))return[S.x,dy<0?r[1]-6:r[3]+6];return[dx<0?r[0]-6:r[2]+6,S.y];};
+  const cabs={};segs.forEach(g=>{if(g.cab)(cabs[g.cab]=cabs[g.cab]||[]).push(g);});
+  // 同じ2か所を結ぶケーブルは1本の線にまとめる（例：リレー3個→2C×3）
+  const dk=sd=>sd.box?sd.box:(sd.loc.indexOf("_")>0&&B.compById[sd.loc.split("_")[0]]&&B.compById[sd.loc.split("_")[0]].c.t==="RL"?sd.loc.split("_")[0]:sd.loc);
+  const groups={};for(const k in cabs){const ws=cabs[k];const a=dk(ws[0].sa),b=dk(ws[0].sb);const gk=[a,b].sort().join("~");(groups[gk]=groups[gk]||{ws:[],cnt:[],sa:ws[0].sa,sb:ws[0].sb}).ws.push(...ws);
+    const isE=ws.every(w=>p.nets[w.net].role==="E");groups[gk].cnt.push(isE?"E":ws.filter(w=>p.nets[w.net].role!=="E").length);}
+  const fixSide=(sd)=>{const k=dk(sd);if(sd.box||k===sd.loc)return sd;// リレーは器具全体の中心から
+    return{loc:k,rl:1};};
+  for(const g in groups){const G=groups[g];G.sa=fixSide(G.sa);G.sb=fixSide(G.sb);}
+  for(const id in B.compById){if(B.compById[id].c.t==="RL"&&!LB[id])LB[id]=B.compById[id].bb.slice();}
+  let lines="",labels="";const drawn=[],labRects=[];
+  for(const g in groups){const G=groups[g];const ws=G.ws;const A=side(G.sa),Z=side(G.sb);const isE=G.cnt.every(c=>c==="E");const cn=G.cnt.filter(c=>c!=="E");
+    const a=edge(A,[Z.x,Z.y]),z=edge(Z,[A.x,A.y]);
+    // 候補の中から、ほかの線・器具と重ならない短い経路を選ぶ
+    // ボックス側は中心から少しずらした位置からも出せる（ボックス記号の下に隠れる）
+    const offA=A.box?[[0,0],[0,16],[0,-16],[16,0],[-16,0]]:[[0,0]],offZ=Z.box?[[0,0],[0,16],[0,-16],[16,0],[-16,0]]:[[0,0]];const cands=[];
+    for(const oa of offA)for(const oz of offZ){const a1=[a[0]+oa[0],a[1]+oa[1]],z1=[z[0]+oz[0],z[1]+oz[1]];const cmx=(a1[0]+z1[0])/2,cmy=(a1[1]+z1[1])/2;
+      cands.push([a1,z1],[a1,[a1[0],z1[1]],z1],[a1,[z1[0],a1[1]],z1]);
+      for(const o of [0,40,-40,80,-80,120,-120]){cands.push([a1,[cmx+o,a1[1]],[cmx+o,z1[1]],z1]);cands.push([a1,[a1[0],cmy+o],[z1[0],cmy+o],z1]);}}
+    let best=null;for(const c0 of cands){const c=c0.filter((q,i,arr)=>i===0||Math.hypot(q[0]-arr[i-1][0],q[1]-arr[i-1][1])>0.5);
+      let sc=0,ok=true;for(let i=0;i+1<c.length;i++){const P0=c[i],P1=c[i+1];if(Math.abs(P0[0]-P1[0])>0.5&&Math.abs(P0[1]-P1[1])>0.5){ok=false;break;}
+        const L=Math.hypot(P1[0]-P0[0],P1[1]-P0[1]);sc+=L;const n=Math.max(1,Math.ceil(L/4));
+        // 既に描いた線の近く（14px以内）を並走する点を数える（ボックス記号のまわりは除く）
+        for(let k=0;k<=n;k++){const x=P0[0]+(P1[0]-P0[0])*k/n,y=P0[1]+(P1[1]-P0[1])*k/n;if(p.boxes.some(bx=>Math.hypot(x-bx.x,y-bx.y)<33))continue;
+          for(const D of drawn){const h1=Math.abs(D[0][1]-D[1][1])<0.5,h2=Math.abs(P0[1]-P1[1])<0.5;if(h1!==h2)continue;
+            if(h1){if(Math.abs(y-D[0][1])<14&&x>=Math.min(D[0][0],D[1][0])-2&&x<=Math.max(D[0][0],D[1][0])+2){sc+=60;break;}}
+            else{if(Math.abs(x-D[0][0])<14&&y>=Math.min(D[0][1],D[1][1])-2&&y<=Math.max(D[0][1],D[1][1])+2){sc+=60;break;}}}}
+        for(const id in B.compById){const own=[G.sa,G.sb].some(sd=>sd.loc&&(sd.loc===id||(sd.loc.split("_")[0]===id)||Object.keys(B.terms).some(t=>t.split(".")[0]===id&&loc(t)===sd.loc)));if(own)continue;const b=B.compById[id].bb;
+          const x0=Math.min(P0[0],P1[0]),x1=Math.max(P0[0],P1[0]),y0=Math.min(P0[1],P1[1]),y1=Math.max(P0[1],P1[1]);if(x1>b[0]-4&&x0<b[2]+4&&y1>b[1]-4&&y0<b[3]+4)sc+=800;}}
+      if(ok&&(!best||sc<best.sc))best={sc,c};}
+    const pts=best.c;for(let i=0;i+1<pts.length;i++)drawn.push([pts[i],pts[i+1]]);
+    const d="M"+pts.map(q=>q[0].toFixed(0)+" "+q[1].toFixed(0)).join("L");
+    lines+=`<path d="${d}" fill="none" stroke="${isE?"#1b8a3a":"#222"}" stroke-width="${isE?6:9}" ${isE?'stroke-dasharray="16 10"':""} stroke-linejoin="round"/>`;
+    // ラベル：ほかのラベル・ボックス記号と重ならない位置を、長い区間から順に探す
+    const cs=cn.map(n=>n<=3?[n]:n===4?[2,2]:n===5?[3,2]:n===6?[3,3]:[n]).flat();const cc={};cs.forEach(n=>cc[n]=(cc[n]||0)+1);
+    const txt=isE?"E":Object.keys(cc).sort((a,b)=>b-a).map(n=>n+"C"+(cc[n]>1?"×"+cc[n]:"")).join("+");const w=txt.length*22+18;
+    const segsL=[];for(let i=0;i+1<pts.length;i++)segsL.push({i,L:Math.hypot(pts[i+1][0]-pts[i][0],pts[i+1][1]-pts[i][1])});segsL.sort((x,y)=>y.L-x.L);
+    let mx=0,my=0,found=false;
+    for(const sg of segsL){for(const f of [0.5,0.35,0.65,0.22,0.78]){const x=pts[sg.i][0]+(pts[sg.i+1][0]-pts[sg.i][0])*f,y=pts[sg.i][1]+(pts[sg.i+1][1]-pts[sg.i][1])*f;
+        const r=[x-w/2-4,y-24,x+w/2+4,y+20];if(labRects.some(q=>r[0]<q[2]&&r[2]>q[0]&&r[1]<q[3]&&r[3]>q[1]))continue;if(p.boxes.some(bx=>Math.abs(x-bx.x)<w/2+32&&Math.abs(y-bx.y)<52))continue;
+        mx=x;my=y;found=true;break;}if(found)break;}
+    if(!found){const sg=segsL[0];mx=(pts[sg.i][0]+pts[sg.i+1][0])/2;my=(pts[sg.i][1]+pts[sg.i+1][1])/2;}
+    labRects.push([mx-w/2-4,my-24,mx+w/2+4,my+20]);
+    labels+=`<rect x="${mx-w/2}" y="${my-22}" width="${w}" height="40" rx="9" fill="${isE?"#e9f6ee":"#fff6d6"}" stroke="${isE?"#1b8a3a":"#c99a1e"}" stroke-width="3"/><text x="${mx}" y="${my+10}" font-size="30" font-weight="800" text-anchor="middle" fill="${isE?"#1b6b33":"#6a4b00"}">${txt}</text>`;}
+  let jb="";for(const b of p.boxes){jb+=b.type==="jb"?`<circle cx="${b.x}" cy="${b.y}" r="30" fill="#fff" stroke="#222" stroke-width="5"/><path d="M${b.x-21} ${b.y+21}L${b.x+21} ${b.y-21}M${b.x-30} ${b.y+6}L${b.x+6} ${b.y-30}M${b.x-6} ${b.y+30}L${b.x+30} ${b.y-6}" stroke="#222" stroke-width="4"/>`:`<rect x="${b.x-30}" y="${b.y-30}" width="60" height="60" fill="#fff" stroke="#222" stroke-width="5"/>`;}
+  // 器具の図は練習画面と同じもの（大きな点線のボックスは除く）
+  const base=B.svg.replace(/<circle[^>]*stroke-dasharray="11 8"\/>|<rect[^>]*stroke-dasharray="11 8"\/>/g,"");
+  p._mini=`<rect x="0" y="0" width="1280" height="720" fill="#fff"/>${lines}${base}${jb}${labels}`;return p._mini;}
+
 /* ============ 判定 ============ */
 function permsFor(p){ // 器具ごとの「入れ替えても同じ」端子の組合せ
   const B=build(p);const per=[];
@@ -615,7 +812,7 @@ function snap(){undo.push(JSON.stringify(st));if(undo.length>80)undo.shift();}
 function setProblem(i){pi=i;st=load(i);undo=[];const p=P[i];const B=build(p);
   gBase.innerHTML=`<rect x="-2000" y="-2000" width="5280" height="4720" fill="#fff"/>`+B.svg;
   document.getElementById("sel").value=String(i);showAns=false;gA.style.display="none";document.getElementById("bAns").classList.remove("on");
-  drawAns();fit();render();closeSheet();}
+  drawAns();fit();render();closeSheet();document.getElementById("miniSvg").innerHTML=miniSVG(p);requestAnimationFrame(placeMini);}
 function fit(){vb={...VB0};applyVB();}
 function applyVB(){svg.setAttribute("viewBox",`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);}
 
@@ -688,7 +885,6 @@ function simplify(pts){if(pts.length<4)return pts;const out=[pts[0]];for(let i=1
 
 /* ============ UI ============ */
 const sel=document.getElementById("sel");P.forEach((p,i)=>{const o=document.createElement("option");o.value=i;o.textContent="No."+p.no+" "+p.title;sel.appendChild(o);});
-sel.addEventListener("change",()=>setProblem(+sel.value));
 document.querySelectorAll("[data-c]").forEach(b=>b.addEventListener("click",()=>{color=b.dataset.c;erase=false;updTools();}));
 document.getElementById("bErase").addEventListener("click",()=>{erase=!erase;updTools();});
 function updTools(){document.querySelectorAll("[data-c]").forEach(b=>b.classList.toggle("on",!erase&&b.dataset.c===color));document.getElementById("bErase").classList.toggle("on",erase);}
@@ -708,7 +904,7 @@ document.getElementById("bCheck").addEventListener("click",()=>{const p=P[pi];if
   if(r.pass)h+=`<div class="msg ok"><span class="ic">✓</span><span>すべての端子が正しい相手とつながっています（接続点 ${r.joints} か所）</span></div>`;
   for(const m of r.msgs)h+=`<div class="msg ${m.lv}"><span class="ic">${m.lv==="ng"?"✖":"!"}</span><span>${esc(m.t)}</span></div>`;
   h+=`<div class="note">※ 器具の2端子（どちらに白を付けるか）や3路の1・3の入れ替えなど、電気的に同じになる結線は正解として扱います。</div>`;
-  openSheet("No."+p.no+" 判定",h);});
+  openSheet("No."+p.no+" 判定",h);if(r.pass){try{localStorage.setItem(KEY+"pass_"+p.no,"1");}catch(e){}}});
 document.getElementById("bInfo").addEventListener("click",()=>{const p=P[pi];
   openSheet("No."+p.no+" "+p.title,`<div class="cond"><ul>${p.desc.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>
   <h3>電線の色（本番）</h3><ul><li>2心ケーブル：黒・白、3心ケーブル：黒・白・赤</li><li>黒＝電源の非接地側、白＝接地側、赤＝返り線・渡り線など（残りの色）</li><li>判定では「接地側は白」「非接地側は黒」「接地線は緑」を確認します。返り線・渡り線の色はケーブルの残りの色になるため自由です。</li></ul><h3>使い方</h3><ul><li>1本指でなぞると線が引けます。端子（○）やボックス内の接続点（●）に近づけると吸着します。</li><li>ジョイントボックス（点線）の中で指を離すと接続点ができ、同じ点に別の線をつなげると「接続」になります。</li><li>2本指で拡大・移動、「全体」で元の表示に戻ります。</li><li>赤い○は、どこにもつながっていない線の端です。</li></ul>
@@ -743,8 +939,53 @@ window.__app={P,check:()=>check(P[pi],st),setProblem,
   loadAnswer(){const {segs,joints}=modelSegs(P[pi]);st={wires:[],joints:{},seq:1};joints.forEach(j=>st.joints[j.id]={id:j.id,x:j.x,y:j.y,box:j.box});segs.forEach(s=>st.wires.push({id:st.seq++,c:s.c,pts:s.pts.map(p=>[p[0],p[1]]),a:s.a,b:s.b}));render();},
   state:()=>st,setState:s=>{st=s;render();}};
 
-let start=0;try{start=+(localStorage.getItem(KEY+"last")||0)||0;}catch(e){}
-setProblem(Math.min(start,P.length-1));
+const miniEl=document.getElementById("mini");
+try{if(localStorage.getItem(KEY+"miniFold")==="1")miniEl.classList.add("fold");}catch(e){}
+const updMini=()=>{document.getElementById("mFold").textContent=miniEl.classList.contains("fold")?"表示":"隠す";document.getElementById("mBig").style.display=miniEl.classList.contains("fold")?"none":"";document.getElementById("mBig").textContent=miniEl.classList.contains("big")?"縮小":"拡大";};
+document.getElementById("mFold").addEventListener("click",()=>{miniEl.classList.toggle("fold");miniEl.classList.remove("big");try{localStorage.setItem(KEY+"miniFold",miniEl.classList.contains("fold")?"1":"0");}catch(e){}updMini();});
+document.getElementById("mBig").addEventListener("click",()=>{miniEl.classList.toggle("big");updMini();setTimeout(placeMini,0);});
+document.getElementById("miniSvg").addEventListener("click",()=>{miniEl.classList.toggle("big");updMini();setTimeout(placeMini,0);});
+updMini();
+// 単線図パネルは、器具やボックスと重なりの少ない四隅に置く
+function placeMini(){if(!st||pi<0)return;const stage=document.getElementById("stage");const R=stage.getBoundingClientRect();const m=svg.getScreenCTM();if(!m||!R.width)return;
+  const w=miniEl.offsetWidth,h=miniEl.offsetHeight;const B=build(P[pi]);const rects=[];
+  for(const id in B.compById){const b=B.compById[id].bb;rects.push(b);}for(const b of P[pi].boxes)rects.push([b.x-b.r,b.y-b.r,b.x+b.r,b.y+b.r]);
+  const toS=(x,y)=>[m.a*x+m.e-R.left,m.d*y+m.f-R.top];let best=null;
+  for(const [v,hz] of [["top","right"],["top","left"],["bottom","right"],["bottom","left"]]){const x0=hz==="left"?8:R.width-8-w,y0=v==="top"?(hz==="left"?28:8):R.height-8-h;
+    let ov=0;for(const b of rects){const p1=toS(b[0],b[1]),p2=toS(b[2],b[3]);const ix=Math.min(p2[0],x0+w)-Math.max(p1[0],x0),iy=Math.min(p2[1],y0+h)-Math.max(p1[1],y0);if(ix>0&&iy>0)ov+=ix*iy;}
+    if(!best||ov<best.ov-1)best={ov,v,hz,x0,y0};}
+  miniEl.style.top=miniEl.style.bottom=miniEl.style.left=miniEl.style.right="";
+  miniEl.style[best.v]=(best.v==="top"?best.y0:8)+"px";miniEl.style[best.hz]="8px";}
+window.addEventListener("resize",()=>setTimeout(placeMini,60));
+// 角のつまみで大きさを変える（つまみは図面側の角に置く）
+const grip=document.getElementById("mGrip");let miniW=null;try{const v=+localStorage.getItem(KEY+"miniW");if(v>0)miniW=v;}catch(e){}
+const applyMiniW=()=>{if(miniW&&!miniEl.classList.contains("big")){const R=document.getElementById("stage").getBoundingClientRect();miniEl.style.width=Math.max(150,Math.min(R.width-16,miniW))+"px";}else miniEl.style.width="";};
+const placeGrip=()=>{const top=!!miniEl.style.top||miniEl.classList.contains("big"),left=!!miniEl.style.left&&!miniEl.classList.contains("big");
+  grip.style.top=top?"":"0";grip.style.bottom=top?"0":"";grip.style.left=left?"":"0";grip.style.right=left?"0":"";
+  const flip=(top?1:-1)*(left?1:-1);grip.querySelector("svg").style.transform=`scale(${left?1:-1},${top?1:-1})`;grip.style.cursor=flip>0?"nwse-resize":"nesw-resize";};
+let gs=null;
+grip.addEventListener("pointerdown",e=>{e.preventDefault();e.stopPropagation();grip.setPointerCapture(e.pointerId);miniEl.classList.remove("big");updMini();
+  const left=!!miniEl.style.left;gs={x:e.clientX,w:miniEl.offsetWidth,dir:left?1:-1};miniEl.classList.add("resizing");});
+grip.addEventListener("pointermove",e=>{if(!gs)return;const R=document.getElementById("stage").getBoundingClientRect();miniW=Math.max(150,Math.min(R.width-16,gs.w+(e.clientX-gs.x)*gs.dir));miniEl.style.width=miniW+"px";});
+const gEnd=()=>{if(!gs)return;gs=null;miniEl.classList.remove("resizing");try{localStorage.setItem(KEY+"miniW",String(Math.round(miniW)));}catch(e){}};
+grip.addEventListener("pointerup",gEnd);grip.addEventListener("pointercancel",gEnd);
+const _place=placeMini;placeMini=function(){applyMiniW();_place();placeGrip();};
+["mFold","mBig"].forEach(id=>document.getElementById(id).addEventListener("click",()=>setTimeout(placeMini,30)));
+/* ============ タイトル画面 ============ */
+const titleEl=document.getElementById("title");
+function statusOf(i){try{if(localStorage.getItem(KEY+"pass_"+P[i].no))return 2;const s=localStorage.getItem(KEY+P[i].no);if(s&&JSON.parse(s).wires.length)return 1;}catch(e){}return 0;}
+function renderTitle(){const box=document.getElementById("cards");let h="",done=0;
+  P.forEach((p,i)=>{const st=statusOf(i);if(st===2)done++;const bl=["未練習","練習中","正解済み ✓"][st];
+    h+=`<button class="card" data-i="${i}"><span class="no">No.${p.no}</span><span class="tt">${esc(p.title)}</span><span class="badge b${st}">${bl}</span></button>`;});
+  box.innerHTML=h;document.getElementById("progTxt").textContent=`正解済み ${done} / ${P.length}`;document.getElementById("progBar").style.width=(done/P.length*100)+"%";}
+document.getElementById("cards").addEventListener("click",e=>{const c=e.target.closest(".card");if(!c)return;location.hash="no"+P[+c.dataset.i].no;});
+document.getElementById("bMenu").addEventListener("click",()=>{location.hash="";if(location.hash)history.replaceState(null,"",location.pathname+location.search);route();});
+function showTitle(){renderTitle();titleEl.classList.remove("hide");closeSheet();}
+function route(){const m=/^#no(\d{1,2})$/.exec(location.hash);const i=m?P.findIndex(p=>p.no===+m[1]):-1;
+  if(i<0){showTitle();return;}titleEl.classList.add("hide");if(i!==pi||!st)setProblem(i);}
+window.addEventListener("hashchange",route);
+sel.addEventListener("change",()=>{location.hash="no"+P[+sel.value].no;});
+pi=-1;route();
 })();
 </script>
 </body>
